@@ -196,7 +196,7 @@ header .backdrop{
   width: 40vw;
   height: 100vh;
   z-index: 1;
-  transition: all .3s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 .toggle-visible{
@@ -524,7 +524,6 @@ main .items-move{
   align-items: center;
   cursor: pointer;
   transition: all 0.1s ease-in;
-  z-index: 1;
 }
 
 #right-slider:hover, #left-slider:hover{
@@ -548,7 +547,17 @@ main .items-static .item{
   border-radius: 2px;
   overflow: hidden;
   min-width: 240px;
+  min-height: 463px;
+  max-height: 463px;
   cursor: pointer;
+}
+
+main .items-static .item .info-item-container{
+  padding: 10px 10px 0;
+  height: 15%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 main .items-static .item img{
@@ -556,10 +565,10 @@ main .items-static .item img{
   min-width: 240px;
   height: 363px;
   min-height: 363px;
-  margin-bottom: 15px;
 }
 
 main .items-static .item h4{
+  width: 100%;
   margin-bottom: 10px;
 }
 
@@ -583,4 +592,108 @@ main .items-static .item .vote-container .vote-average{
 main .items-grid .item .vote-container .vote-count{
   font-size: 13px;
   color: rgb(94, 94, 94);
+}
+
+/* ------------------------------POP UP-------------------------------------- */
+
+.pop-up{
+  position: fixed;
+  transform: translate( -50%, -50% );
+  top: 40%;
+  left: 50%;
+  opacity: 0;
+  visibility: hidden;
+  height: 80vh;
+  width: 70vw;
+  background-color: rgb(61, 61, 61);
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 15px;
+  transition: all .3s ease-in;
+  box-shadow: 0 0 10px black;
+}
+
+.pop-up-show{
+  visibility: visible;
+  opacity: 1;
+  top: 50%;
+  left: 50%;
+}
+
+.pop-up-content{
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+}
+
+.pop-up-content .left-popup-conteiner{
+  overflow: hidden;
+  height: 480px;
+  min-height: 480px;
+  width: 318px;
+  min-width: 318px;
+  position: relative;
+}
+
+.pop-up-content .left-popup-conteiner img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.pop-up-content .left-popup-conteiner .popup-vote{
+  position: absolute;
+  background-color: rgb(61, 61, 61, .7);
+  right: 0;
+  bottom: -1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 0 0 10px;
+  padding: 5px 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#star-popup{
+  color: yellow;
+  font-size: .9em;
+  margin-right: 7px;
+}
+
+.pop-up-content .right-popup-conteiner{
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pop-up-content .right-popup-conteiner .sup .title-year{
+  margin-bottom: 20px;
+}
+
+.pop-up-content .right-popup-conteiner .sup .title-year h2{
+  font-size: 1.8em;
+}
+
+.pop-up-content .right-popup-conteiner .sup .overview{
+  font-size: 1.2em;
+  color: #bebebe;
+}
+
+.popup-close{
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  background-color: transparent;
+  color: rgb(221, 221, 221, .7);
+  cursor: pointer;
+}
+
+.pop-up-content .right-popup-conteiner .more-info h5{
+  margin-bottom: 15px;
+  font-size: 1em;
 }

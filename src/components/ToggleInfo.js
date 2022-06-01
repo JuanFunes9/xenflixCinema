@@ -13,7 +13,7 @@ const ToggleInfo = ({ handleToggleCover }) => {
         <div className="ti-info-content" >
           <h4>Juan Ignacio Funes</h4>
           <div className="personal-info" >
-            <p>&#128187; Front-end developer</p>
+            <p>&#128187; Web developer</p>
             <p>&#128205; Bs. As. - Argentina</p>
           </div>
           <div className="links">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div className="link">

@@ -12,29 +12,30 @@ const Grid = ({ items, id }) => {
   const handleSlideRight = () => {
     if( scrollValue >  -4240 ){
       scrollValue -= 265;
+      console.log( scrollValue )
       itemsMove.style.transform = `translate( ${ scrollValue }px, 0 )`;
     }
     else{
-      return;
+      scrollValue = 0;
+      itemsMove.style.transform = `translate( ${ scrollValue }px, 0 )`;
     }
   }
 
   const handleSlideLeft = () => {
     if( scrollValue < 0 ){
       scrollValue += 265;
+      console.log( scrollValue )
       itemsMove.style.transform = `translate( ${ scrollValue }px, 0 )`;
     }
     else{
-      return;
+      scrollValue = -4240;
+      itemsMove.style.transform = `translate( ${ scrollValue }px, 0 )`;
     }
   }
 
   return (
     <>
       <div className="display-grid">
-        <button id="left-slider" onClick={ handleSlideLeft }>
-          <span className="material-symbols-outlined slider">keyboard_arrow_left</span>
-        </button>
         <div className="items-static">
           <div className="items-move" id={ id }>
             {
@@ -44,6 +45,9 @@ const Grid = ({ items, id }) => {
             }
           </div>
         </div>
+        <button id="left-slider" onClick={ handleSlideLeft }>
+          <span className="material-symbols-outlined slider">keyboard_arrow_left</span>
+        </button>
         <button id="right-slider" onClick={ handleSlideRight }>
           <span className="material-symbols-outlined slider">keyboard_arrow_right</span>
         </button>
