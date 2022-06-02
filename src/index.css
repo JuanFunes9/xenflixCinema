@@ -61,7 +61,7 @@ nav{
   position: sticky;
   top: 35px;
   width: 100%;
-  z-index: 1;
+  z-index: 10;
 }
 
 nav .nav-content{
@@ -543,6 +543,7 @@ main .display-grid .slider{
 }
 
 main .items-static .item{
+  position: relative;
   background-color: transparent;
   border-radius: 2px;
   overflow: hidden;
@@ -606,7 +607,7 @@ main .items-grid .item .vote-container .vote-count{
   height: 80vh;
   width: 70vw;
   background-color: rgb(61, 61, 61);
-  z-index: 1;
+  z-index: 50;
   overflow: hidden;
   border-radius: 15px;
   transition: all .3s ease-in;
