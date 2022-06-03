@@ -551,6 +551,13 @@ main .items-static .items-move .item{
   min-height: 463px;
   max-height: 463px;
   cursor: pointer;
+  transition: 0.4s;
+}
+
+main .items-static .items-move .item:hover{
+  outline: 1px solid rgba(173, 173, 173, 0.4);
+  box-shadow: 0 0 5px rgba(173, 173, 173, 0.7);
+  transform: translateY(-7px);
 }
 
 main .items-static .item .info-item-container{
@@ -590,8 +597,8 @@ main .items-static .item .vote-container .vote-average{
   user-select: none;
 }
 
-main .items-grid .item .vote-container .vote-count{
-  font-size: 13px;
+.vote-count{
+  font-size: 15px;
   color: rgb(94, 94, 94);
 }
 

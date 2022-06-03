@@ -1,6 +1,14 @@
 import React from 'react';
 
-const Popup = ({ movie, handlePopUp }) => {
+const Popup = ({ movie }) => {
+
+  const handlePopUp = () => {
+    const popUp = document.getElementById( `${ movie.title }` );
+    const coverPopUp = document.getElementById( 'cover-popup' );
+    popUp.classList.toggle( 'pop-up-show' );
+    coverPopUp.classList.toggle( 'cover-popup-show' );
+  }
+
     return (
       <div className="pop-up" id={ movie.title }>
         <div className="pop-up-content" >

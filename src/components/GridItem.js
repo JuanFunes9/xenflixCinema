@@ -38,7 +38,6 @@ const GridItem = ({ movie }) => {
           </div>
         </div>
       </div>
-      <Popup movie={ movie } handlePopUp={ handlePopUp } />
     </>
   )
 

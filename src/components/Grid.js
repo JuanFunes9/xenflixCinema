@@ -1,7 +1,7 @@
 import React from 'react';
 //Component
 import GridItem from './GridItem';
-// import WindowAlert from './WindowAlert';
+import Popup from './Popup';
 //Helpers
 
 const Grid = ({ items, id }) => {
@@ -45,6 +45,11 @@ const Grid = ({ items, id }) => {
             }
           </div>
           <div className="cover-popup" id="cover-popup"></div>
+          {
+            items.map( item => {
+              return <Popup movie={ item } />
+            })
+          }
         </div>
         <button id="left-slider" onClick={ handleSlideLeft }>
           <span className="material-symbols-outlined slider">keyboard_arrow_left</span>
