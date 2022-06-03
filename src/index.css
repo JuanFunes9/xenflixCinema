@@ -195,7 +195,7 @@ header .backdrop{
   left: -800px;
   width: 40vw;
   height: 100vh;
-  z-index: 1;
+  z-index: 20;
   transition: all .5s ease-in-out;
 }
 
@@ -479,17 +479,17 @@ main .display-grid{
   padding: 0 25px;
 }
 
-main .items-static{
-  overflow: hidden;
-}
+/* main .items-static{
+
+} */
 
 main .items-move{
   display: grid;
   grid-template-columns: repeat( 20, 1fr );
   grid-gap: 25px;
   transition: all 0.3s ease-in-out;
-  position: relative;
-  z-index: 0;
+  /* position: relative; */
+  /* z-index: 0; */
 }
 
 #right-slider{
@@ -542,7 +542,7 @@ main .display-grid .slider{
   user-select: none;
 }
 
-main .items-static .item{
+main .items-static .items-move .item{
   position: relative;
   background-color: transparent;
   border-radius: 2px;
@@ -607,7 +607,7 @@ main .items-grid .item .vote-container .vote-count{
   height: 80vh;
   width: 70vw;
   background-color: rgb(61, 61, 61);
-  z-index: 50;
+  z-index: 1000;
   overflow: hidden;
   border-radius: 15px;
   transition: all .3s ease-in;
@@ -697,4 +697,22 @@ main .items-grid .item .vote-container .vote-count{
 .pop-up-content .right-popup-conteiner .more-info h5{
   margin-bottom: 15px;
   font-size: 1em;
+}
+
+.cover-popup{
+  background-color: rgba(19, 19, 19, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  opacity: 0;
+  transition: .4s;
+}
+
+.cover-popup-show{
+  visibility: visible;
+  opacity: 1;
+  z-index: 90;
 }

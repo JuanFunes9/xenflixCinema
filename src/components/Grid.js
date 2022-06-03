@@ -44,6 +44,7 @@ const Grid = ({ items, id }) => {
               })
             }
           </div>
+          <div className="cover-popup" id="cover-popup"></div>
         </div>
         <button id="left-slider" onClick={ handleSlideLeft }>
           <span className="material-symbols-outlined slider">keyboard_arrow_left</span>
