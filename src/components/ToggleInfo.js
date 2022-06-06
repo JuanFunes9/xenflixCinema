@@ -17,7 +17,7 @@ const ToggleInfo = ({ handleToggleCover }) => {
             <p>&#128205; Bs. As. - Argentina</p>
           </div>
           <div className="links">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div className="link">
-              <a href="https://github.com/JuanFunes9"  target="-blank">
+              <a href="https://github.com/JuanFunes9/xenflixCinema"  target="-blank">
                 <i className="fa-brands fa-github"></i>
               </a>
             </div>

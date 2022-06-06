@@ -35,6 +35,11 @@ const NavBar = () => {
           <div className="items">
             <div className="links" >
               <div className="links-container" >
+                <Link to="tendencias" spy={true} smooth={true} offset={ -85 } duration={500}>
+                  Tendencias &#128293;
+                </Link>
+              </div>
+              <div className="links-container" >
                 <Link to="peliculas" spy={true} smooth={true} offset={ -85 } duration={500}>
                   Películas
                 </Link>
@@ -42,11 +47,6 @@ const NavBar = () => {
               <div className="links-container" >
                 <Link to="series-tv" spy={true} smooth={true} offset={ -85 } duration={500}>
                   Series
-                </Link>
-              </div>
-              <div className="links-container" >
-                <Link to="personalidades" spy={true} smooth={true} offset={ -85 } duration={500}>
-                  Personalidades
                 </Link>
               </div>
             </div>

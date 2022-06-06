@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+//genres
+import getGenres from '../helpers/getGenres';
+import getCredits from '../helpers/getCredits';
+import getDate from '../helpers/getDate';
 
 const Popup = ({ movie }) => {
+
+  const [cast, setCast] = useState('');
+  const [date, setDate] = useState('');
 
   const handlePopUp = () => {
     const popUp = document.getElementById( `${ movie.title }` );
@@ -8,6 +15,9 @@ const Popup = ({ movie }) => {
     popUp.classList.toggle( 'pop-up-show' );
     coverPopUp.classList.toggle( 'cover-popup-show' );
   }
+
+  getCredits( movie.id ).then( data => setCast( data ) );
+  getDate( movie.id ).then( data => setDate( data ) );
 
     return (
       <div className="pop-up" id={ movie.title }>
@@ -23,14 +33,17 @@ const Popup = ({ movie }) => {
             <div className="sup">
               <div className="title-year" >
                 <h2>{ movie.title }</h2>
+                <p>{ getGenres( movie.genreId ) }</p>
               </div>
               <div className="overview" >
                 <p>{ movie.overview }</p>
               </div>
             </div>
             <div className="more-info">
-              <h5>Directed by:</h5>
-              <h5>Starring:</h5>
+              <h5>Year:</h5>
+              <p>{ date }</p>
+              <h5>Cast:</h5>
+              <p>{ cast }</p>
             </div>
           </div>
         </div>

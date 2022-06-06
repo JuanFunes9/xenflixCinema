@@ -1,7 +1,8 @@
 import React from 'react';
 import imageWarning from '../img/not_found.jpg';
 //components
-import Popup from './Popup';
+//genres
+import getGenres from '../helpers/getGenres';
 
 const GridItem = ({ movie }) => {
 
@@ -31,10 +32,15 @@ const GridItem = ({ movie }) => {
         <img src={ handleImg( movie.posterImg ) } alt="img"></img>
         <div className="info-item-container">
           <h4>{ movie.title }</h4>
-          <div className="vote-container">
-            <p className="vote-average">{ movie.voteAverage }</p>
-            <span className="material-symbols-outlined" id="star">star</span>
-            <p className="vote-count">({ movie.voteCount })</p>
+          <div className="genre-vote-container">
+            <div className="vote-container">
+              <p className="vote-average">{ movie.voteAverage }</p>
+              <span className="material-symbols-outlined" id="star">star</span>
+              <p className="vote-count">({ movie.voteCount })</p>
+            </div>
+            <div className="genre-container">
+              <p>{ getGenres( movie.genreId ) }</p>
+            </div>
           </div>
         </div>
       </div>

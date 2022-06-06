@@ -29,7 +29,6 @@ const MainApp = () => {
         id={ 'tendencias' }
         getItems={ getTrending }
         options={ [] }
-        searchId={ 'searchTendencias' }
       />
 
       <Block
@@ -37,7 +36,6 @@ const MainApp = () => {
         id={ 'peliculas' }
         getItems={ getMovies }
         options={ moviesOptions }
-        searchId={ 'searchMovies' }
       />
 
       <Block
@@ -45,7 +43,6 @@ const MainApp = () => {
         id={ 'series-tv' }
         getItems={ getSeries }
         options={ seriesOptions }
-        searchId={ 'searchSeries' }
       />
 
     </main>

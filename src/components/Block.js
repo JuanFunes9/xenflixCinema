@@ -3,11 +3,14 @@ import React, { useState, useEffect } from 'react';
 import Grid from './Grid';
 //helpers
 
-const Block = ({ title, id, getItems, options, searchId }) => {
+const Block = ({ title, id, getItems, options }) => {
 
   const [filter, setFilter] = useState('');
-  const [search, setSearch] = useState('');
   const [items, setItems] = useState([]);
+
+  if( options.length < 1 ){
+    options = false;
+  }
 
   useEffect(() => {
     getItems( filter ).then( data => setItems( data ) );
@@ -17,11 +20,6 @@ const Block = ({ title, id, getItems, options, searchId }) => {
     setFilter( 'popular?' )
   }, [] );
 
-  const handleSearchIcon = () => {
-    const input = document.querySelector(`#${ searchId }`);
-    input.classList.toggle( 'visible' )
-  }
-
   return (
     <div className="block" name={ id }>
       <div className="block-header-cont" id={ title }>
@@ -29,24 +27,18 @@ const Block = ({ title, id, getItems, options, searchId }) => {
           <div className="title-container" >
             <h2>{ title }</h2>
           </div>
-          <div className="select-container">
-            <label htmlFor="filter" ><h4>Mostrar</h4></label>
-            <select name="filter" id="filter" onChange={ e => setFilter( e.target.value ) }>
-              {
-                options.map( option => {
-                  return <option key={ option.value } value={ option.value }>{ option.label }</option>
-                } )
-              }
-            </select>
-          </div>
-        </div>
-        <div className="block-header-right" >
-          <div className="search-input-container" id={ searchId }>
-            <input type="text" placeholder="Busca algo..." onChange={ (e) => setSearch( e.target.value ) }></input>
-          </div>
-          <div className="search-icon-container" >
-            <span className="material-symbols-outlined" id="search-icon" onClick={ handleSearchIcon }>search</span>
-          </div>
+          { options ?
+            <div className="select-container">
+              <label htmlFor="filter" ><h4>Mostrar</h4></label>
+              <select name="filter" id="filter" onChange={ e => setFilter( e.target.value ) }>
+                {
+                  options.map( option => {
+                    return <option key={ option.value } value={ option.value }>{ option.label }</option>
+                  } )
+                }
+              </select>
+            </div> : ''
+          }
         </div>
       </div>
       <div id="barra-separadora"></div>
