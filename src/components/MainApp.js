@@ -4,7 +4,7 @@ import Block from './Block';
 //Helpers:
 import getMovies from '../helpers/getMovies';
 import getSeries from '../helpers/getSeries';
-import getActors from '../helpers/getActors';
+import getTrending from '../helpers/getTrending';
 
 const MainApp = () => {
 
@@ -21,12 +21,16 @@ const MainApp = () => {
     { value: 'top_rated?', label: 'Mejor valoradas'},
   ];
 
-  const actorsOptions = [
-    { value: 'popular?', label: 'Más populares'},
-  ];
-
   return (
     <main>
+
+      <Block
+        title={ 'Tendencias' }
+        id={ 'tendencias' }
+        getItems={ getTrending }
+        options={ [] }
+        searchId={ 'searchTendencias' }
+      />
 
       <Block
         title={ 'Películas' }
@@ -42,14 +46,6 @@ const MainApp = () => {
         getItems={ getSeries }
         options={ seriesOptions }
         searchId={ 'searchSeries' }
-      />
-
-      <Block
-        title={ 'Personalidades' }
-        id={ 'personalidades' }
-        getItems={ getActors }
-        options={ actorsOptions }
-        searchId={ 'searchActors' }
       />
 
     </main>

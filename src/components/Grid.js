@@ -12,7 +12,6 @@ const Grid = ({ items, id }) => {
   const handleSlideRight = () => {
     if( scrollValue >  -4240 ){
       scrollValue -= 265;
-      console.log( scrollValue )
       itemsMove.style.transform = `translate( ${ scrollValue }px, 0 )`;
     }
     else{
@@ -24,7 +23,6 @@ const Grid = ({ items, id }) => {
   const handleSlideLeft = () => {
     if( scrollValue < 0 ){
       scrollValue += 265;
-      console.log( scrollValue )
       itemsMove.style.transform = `translate( ${ scrollValue }px, 0 )`;
     }
     else{
@@ -47,7 +45,7 @@ const Grid = ({ items, id }) => {
           <div className="cover-popup" id="cover-popup"></div>
           {
             items.map( item => {
-              return <Popup movie={ item } />
+              return <Popup movie={ item } key={ item.id }/>
             })
           }
         </div>
