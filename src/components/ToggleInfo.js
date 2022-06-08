@@ -1,7 +1,7 @@
 import React from 'react';
-import profilePic from '../img/profile.jpg';
-import hcj from '../img/htmlCssJs.png';
-import reactLogo from '../img/react.png';
+import profilePic from './../img/profile.jpg';
+import hcj from './../img/htmlCssJs.png';
+import reactLogo from './../img/react.png';
 
 const ToggleInfo = ({ handleToggleCover }) => {
   return (
