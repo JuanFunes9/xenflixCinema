@@ -1,5 +1,5 @@
 import React from 'react';
-import imageWarning from '../img/not_found.jpg';
+// import imageWarning from '../img/not_found.jpg';
 //components
 //genres
 import getGenres from '../helpers/getGenres';
@@ -12,7 +12,7 @@ const GridItem = ({ movie }) => {
 
   const handleImg = ( image ) => {
     if ( image === 'https://image.tmdb.org/t/p/w500/null' ){
-      return imageWarning;
+      return 'https://i.postimg.cc/RNPBm9GB/not-found.png';
     }
     else{
       return image;

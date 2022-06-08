@@ -1,14 +1,14 @@
 import React from 'react';
-import profilePic from './../img/profile.jpg';
-import hcj from './../img/htmlCssJs.png';
-import reactLogo from './../img/react.png';
+// import profilePic from './../img/profile.jpg';
+// import hcj from './../img/htmlCssJs.png';
+// import reactLogo from './../img/react.png';
 
 const ToggleInfo = ({ handleToggleCover }) => {
   return (
     <div id="toggle-info" className="toggle" >
       <div className="ti-profile-container" >
         <div className="ti-img-container" >
-          <img src={ profilePic } alt="img"></img>
+          <img src="https://i.postimg.cc/xkmDLmQf/profile.png" alt="img"></img>
         </div>
         <div className="ti-info-content" >
           <h4>Juan Ignacio Funes</h4>
@@ -42,10 +42,10 @@ const ToggleInfo = ({ handleToggleCover }) => {
         <h4>Tecnologías en este proyecto</h4>
         <div className="techs-container" >
           <div className="tech">
-            <img src={hcj} alt="img"></img>
+            <img src="https://i.postimg.cc/qzBTWgsw/html-Css-Js.png" alt="img"></img>
           </div>
           <div className="tech">
-            <img src={reactLogo} alt="img"></img>
+            <img src="https://i.postimg.cc/5X6MNGkF/react.png" alt="img"></img>
           </div>
         </div>
       </div>
