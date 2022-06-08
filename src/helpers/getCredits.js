@@ -1,4 +1,3 @@
-
 const getCredits = async( movieId ) => {
 
 	const apiUrl = `https://api.themoviedb.org/3/movie/${ movieId }/credits?api_key=e1517d664064d580fa4b5eac2ce23f57&language=en-US`;
@@ -6,7 +5,7 @@ const getCredits = async( movieId ) => {
 	try{
 		const resp = await fetch ( apiUrl );
 		if( resp.status === 404 ){
-			return 'Cast not found...'
+			return 'Cast not found...';
 		}
 		const { cast } = await resp.json();
 		cast.splice( 9 );

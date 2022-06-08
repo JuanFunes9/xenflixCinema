@@ -40,8 +40,10 @@ const Popup = ({ movie }) => {
               </div>
             </div>
             <div className="more-info">
-              <h5>Year:</h5>
-              <p>{ date }</p>
+              <div className="year" >
+                <h5>Year:</h5>
+                <p>{ date }</p>
+              </div>
               <h5>Cast:</h5>
               <p>{ cast }</p>
             </div>

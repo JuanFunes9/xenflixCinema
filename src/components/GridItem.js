@@ -20,10 +20,15 @@ const GridItem = ({ movie }) => {
   }
 
   const handlePopUp = () => {
-    const popUp = document.getElementById( `${ movie.title }` );
-    const coverPopUp = document.getElementById( 'cover-popup' );
-    popUp.classList.toggle( 'pop-up-show' );
-    coverPopUp.classList.toggle( 'cover-popup-show' );
+    try{
+      const popUp = document.getElementById( `${ movie.title }` );
+      const coverPopUp = document.getElementById( 'cover-popup' );
+      popUp.classList.toggle( 'pop-up-show' );
+      coverPopUp.classList.toggle( 'cover-popup-show' );
+    } catch( err ){
+      alert( 'Pop-up no disponible :(' );
+    }
+
   }
 
   return (
